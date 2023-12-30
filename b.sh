@@ -143,7 +143,7 @@ read -p "  Nhập giới hạn thiết bị: " DeviceLimit
   echo "-------------------------------"
   
   #IP vps
- read -p "  Nhập địa chỉ Node: " CertDomain
+ read -p "  Nhập IP or Domain Node: " CertDomain
   [ -z "${CertDomain}" ] && CertDomain="0"
  echo "-------------------------------"
   echo "  Địa chỉ Node là ${CertDomain}"

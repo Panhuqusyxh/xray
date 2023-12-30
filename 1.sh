@@ -1,5 +1,9 @@
 #!/bin/bash
-sudo apt update && sudo apt upgrade
+
+# Tự động nhập "yes" cho sudo apt update và sudo apt upgrade
+yes | sudo apt update
+yes | sudo apt upgrade
+
 # Tìm và xóa file 1.sh, a.sh, b.sh nếu tồn tại
 
 files_to_delete=("1.sh" "a.sh" "b.sh")

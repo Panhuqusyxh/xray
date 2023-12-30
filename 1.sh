@@ -9,8 +9,6 @@ for file in "${files_to_delete[@]}"; do
     fi
 done
 
-
-
 read -p "
 Chọn tên người dùng 
 1: dualeo 

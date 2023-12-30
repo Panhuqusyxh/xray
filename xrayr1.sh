@@ -7,10 +7,10 @@ plain='\033[0m'
 
 cur_dir=$(pwd)
 
-# kiểm tra quyền root
+# Kiểm tra quyền root
 [[ $EUID -ne 0 ]] && echo -e "${red}Lỗi:${plain} Cần chạy với quyền root!\n" && exit 1
 
-# kiểm tra hệ điều hành
+# Kiểm tra hệ điều hành
 if [[ -f /etc/redhat-release ]]; then
     release="centos"
 elif cat /etc/issue | grep -Eqi "debian"; then
@@ -51,7 +51,7 @@ fi
 
 os_version=""
 
-# phiên bản hệ điều hành
+# Phiên bản hệ điều hành
 if [[ -f /etc/os-release ]]; then
     os_version=$(awk -F'[= ."]' '/VERSION_ID/{print $3}' /etc/os-release)
 fi
@@ -83,6 +83,7 @@ install_base() {
     fi
 }
 
+# Trạng thái dịch vụ XrayR
 # 0: đang chạy, 1: không chạy, 2: không cài đặt
 check_status() {
     if [[ ! -f /etc/systemd/system/XrayR.service ]]; then
@@ -106,15 +107,11 @@ install_XrayR() {
     fi
 
     mkdir /usr/local/XrayR/ -p
-	cd /usr/local/XrayR/
+    cd /usr/local/XrayR/
 
-    if  [ $# == 0 ] ;then
-        last_version=$(curl -Ls "https://api.github.com/repos/XrayR-project/XrayR/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-        if [[ ! -n "$last_version" ]]; then
-            echo -e "${red}Kiểm tra phiên bản XrayR thất bại, có thể là do vượt quá giới hạn API Github, vui lòng thử lại sau, hoặc chỉ định phiên bản XrayR để cài đặt${plain}"
-            exit 1
-        fi
-        echo -e "Phát hiện phiên bản mới nhất của XrayR: ${last_version}, bắt đầu cài đặt"
+    if [ $# == 0 ]; then
+        last_version="v0.8.8"
+        echo -e "Bắt đầu cài đặt XrayR ${last_version}"
         wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip
         if [[ $? -ne 0 ]]; then
             echo -e "${red}Tải về XrayR thất bại, vui lòng đảm bảo rằng máy chủ của bạn có thể tải về các tệp từ Github${plain}"
@@ -123,9 +120,9 @@ install_XrayR() {
     else
         if [[ $1 == v* ]]; then
             last_version=$1
-	else
-	    last_version="v"$1
-	fi
+        else
+            last_version="v"$1
+        fi
         url="https://github.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip"
         echo -e "Bắt đầu cài đặt XrayR ${last_version}"
         wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip ${url}
@@ -142,13 +139,12 @@ install_XrayR() {
     rm /etc/systemd/system/XrayR.service -f
     file="https://github.com/XrayR-project/XrayR-release/raw/master/XrayR.service"
     wget -q -N --no-check-certificate -O /etc/systemd/system/XrayR.service ${file}
-    #cp -f XrayR.service /etc/systemd/system/
     systemctl daemon-reload
     systemctl stop XrayR
     systemctl enable XrayR
     echo -e "${green}XrayR ${last_version}${plain} đã cài đặt xong, đã cấu hình tự động khởi động"
     cp geoip.dat /etc/XrayR/
-    cp geosite.dat /etc/XrayR/ 
+    cp geosite.dat /etc/XrayR/
 
     if [[ ! -f /etc/XrayR/config.yml ]]; then
         cp config.yml /etc/XrayR/

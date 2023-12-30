@@ -1,4 +1,31 @@
+#!/bin/bash
+
+# Kiểm tra hệ điều hành
+if [ -e /etc/os-release ]; then
+    source /etc/os-release
+    OS=$NAME
+else
+    OS=$(uname -s)
+fi
+
+echo "Hệ điều hành: $OS"
+
+# Kiểm tra sự tồn tại của wget và curl
+if command -v wget &> /dev/null; then
+    echo "wget đã được cài đặt"
+else
+    echo "wget chưa được cài đặt"
+fi
+
+if command -v curl &> /dev/null; then
+    echo "curl đã được cài đặt"
+else
+    echo "curl chưa được cài đặt"
+fi
+
+
 # Tìm và xóa file 1.sh, a.sh, b.sh nếu tồn tại
+
 
 files_to_delete=("1.sh" "a.sh" "b.sh")
 
@@ -103,13 +130,13 @@ Vui lòng nhập số : " choice
 
 case $choice in
     1|"dualeo")
-        wget https://raw.githubusercontent.com/Panhuqusyxh/xray/main/a.sh && bash a.sh
+        bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/a.sh)
         ;;
     2|"thanh")
-        wget https://raw.githubusercontent.com/Panhuqusyxh/xray/main/b.sh && bash b.sh
+        bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/b.sh)
         ;;
     *)
         echo "Chọn không hợp lệ. Mặc định sẽ chọn dualeo."
-        wget https://raw.githubusercontent.com/Panhuqusyxh/xray/main/a.sh && bash a.sh
+        bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/a.sh)
         ;;
 esac

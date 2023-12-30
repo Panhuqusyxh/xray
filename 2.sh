@@ -14,13 +14,31 @@ echo "Hệ điều hành: $OS"
 if command -v wget &> /dev/null; then
     echo "wget đã được cài đặt"
 else
-    echo "wget chưa được cài đặt"
+    echo "wget chưa được cài đặt, bắt đầu quá trình cài đặt..."
+    # Cài đặt wget
+    if [ "$OS" == "Ubuntu" ]; then
+        sudo apt-get update
+        sudo apt-get install wget
+    elif [ "$OS" == "CentOS Linux" ]; then
+        sudo yum install wget
+    else
+        echo "Hệ điều hành không được hỗ trợ để tự động cài đặt wget."
+    fi
 fi
 
 if command -v curl &> /dev/null; then
     echo "curl đã được cài đặt"
 else
-    echo "curl chưa được cài đặt"
+    echo "curl chưa được cài đặt, bắt đầu quá trình cài đặt..."
+    # Cài đặt curl
+    if [ "$OS" == "Ubuntu" ]; then
+        sudo apt-get update
+        sudo apt-get install curl
+    elif [ "$OS" == "CentOS Linux" ]; then
+        sudo yum install curl
+    else
+        echo "Hệ điều hành không được hỗ trợ để tự động cài đặt curl."
+    fi
 fi
 
 

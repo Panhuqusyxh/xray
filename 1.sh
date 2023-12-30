@@ -15,7 +15,7 @@ Chọn tên người dùng
 1: dualeo 
 2: thanh 
 Enter để sử dụng mặc định dualeo
-: " choice
+ nhap so : " choice
 
 case $choice in
     1|"dualeo")

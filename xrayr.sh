@@ -2,7 +2,7 @@
 
 # Kiểm tra sự tồn tại của file xrayrpro.sh
 
-wget -N https://raw.githubusercontent.com/Panhuqusyxh/xray/main/xrayr1.sh && bash install.sh
+wget -N https://raw.githubusercontent.com/Panhuqusyxh/xray/main/xrayr1.sh && bash install.sh v0.8.8
 
 
 if [ -e "xrayrpro.sh" ]; then

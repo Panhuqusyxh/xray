@@ -5,17 +5,18 @@ files_to_delete=("1.sh" "a.sh" "b.sh")
 
 for file in "${files_to_delete[@]}"; do
     if [ -e "$file" ]; then
-        rm "$file"
-        echo "Đã xóa file $file."
-    else
-        echo "File $file không tồn tại."
+        rm "$file" >/dev/null 2>&1  # Xóa file mà không hiển thị output
     fi
 done
 
 
-read -p "Chọn tên người dùng (
-1: dualeo Enter để sử dụng mặc định dualeo
-2: thanh ): " choice
+
+read -p "
+Chọn tên người dùng 
+1: dualeo 
+2: thanh 
+Enter để sử dụng mặc định dualeo
+: " choice
 
 case $choice in
     1|"dualeo")

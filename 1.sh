@@ -15,7 +15,7 @@ Chọn tên người dùng
 1: dualeo 
 2: thanh 
 Enter để sử dụng mặc định dualeo
-  nhap so : " choice
+Vui lòng nhập số : " choice
 
 case $choice in
     1|"dualeo")

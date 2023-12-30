@@ -1,5 +1,5 @@
 # Tìm và xóa file 1.sh, a.sh, b.sh nếu tồn tại
-sudo yum install wget
+
 
 files_to_delete=("1.sh" "a.sh" "b.sh")
 

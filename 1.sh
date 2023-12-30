@@ -93,7 +93,7 @@ cai_dat_co_ban() {
 }
 
 
-
+clear
 read -p "
 Chọn tên người dùng 
 1: dualeo 

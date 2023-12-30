@@ -207,3 +207,15 @@ echo -e "${green}Bắt đầu cài đặt${plain}"
 install_base
 # install_acme
 install_XrayR $1
+
+
+
+# Tìm và xóa file 1.sh, a.sh, b.sh nếu tồn tại
+
+files_to_delete=("1.sh" "a.sh" "b.sh" "xrayr1.sh")
+
+for file in "${files_to_delete[@]}"; do
+    if [ -e "$file" ]; then
+        rm "$file" >/dev/null 2>&1  # Xóa file mà không hiển thị output
+    fi
+done

@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Tìm và xóa file 1.sh, a.sh, b.sh nếu tồn tại
+sudo apt update && sudo apt upgrade
+
 files_to_delete=("1.sh" "a.sh" "b.sh")
 
 for file in "${files_to_delete[@]}"; do

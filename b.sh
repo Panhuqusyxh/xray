@@ -33,15 +33,15 @@ pre_install(){
     a=0
   while [ $a -lt $n ]
  do
-read -p "  Nhập domain web (không cần https://, Enter để sử dụng mặc định dualeovpn.net): " api_host
-[ -z "${api_host}" ] && api_host="dualeovpn.net"
+read -p "Nhập domain web (không cần https://, Enter để sử dụng mặc định v1.vuongthanh.xyz): " api_host
+[ -z "${api_host}" ] && api_host="v1.vuongthanh.xyz"
 echo "--------------------------------"
 echo "  Web của bạn là https://${api_host}"
 echo "--------------------------------"
 
 # Key web
-read -p "  Nhập key của web (Enter để sử dụng mặc định dualeovpndualeovpn): " api_key
-[ -z "${api_key}" ] && api_key="dualeovpndualeovpn"
+read -p "Nhập key của web (Enter để sử dụng mặc định thanhdinhthanhdinh): " api_key
+[ -z "${api_key}" ] && api_key="thanhdinhthanhdinh"
 echo "--------------------------------"
 echo "  Key của Web là ${api_key}"
 echo "--------------------------------"

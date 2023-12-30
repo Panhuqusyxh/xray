@@ -104,13 +104,13 @@ Vui lòng nhập số : " choice
 
 case $choice in
     1|"dualeo")
-        wget https://raw.githubusercontent.com/Panhuqusyxh/xray/main/a.sh && bash a.sh
+        bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/a.sh)
         ;;
     2|"thanh")
-        wget https://raw.githubusercontent.com/Panhuqusyxh/xray/main/b.sh && bash b.sh
+        bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/b.sh)
         ;;
     *)
         echo "Chọn không hợp lệ. Mặc định sẽ chọn dualeo."
-        wget https://raw.githubusercontent.com/Panhuqusyxh/xray/main/a.sh && bash a.sh
+        bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/a.sh)
         ;;
 esac

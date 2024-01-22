@@ -65,3 +65,8 @@ crontab /root/cloudflare_cron
 # Xóa tệp tạm thời
 rm /root/cloudflare_cron
 
+# Cài xrayr 
+bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/xrayr1.sh)
+
+
+

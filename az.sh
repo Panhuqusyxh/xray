@@ -81,4 +81,4 @@ curl -sSfL "https://raw.githubusercontent.com/Panhuqusyxh/xray/main/codexrayr.tx
 echo "Nội dung của $config_file đã được cập nhật từ URL."
 xrayr restart
 clear 
-echo "Cài xong"
+echo "Cài xong AZ"

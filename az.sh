@@ -47,3 +47,21 @@ EOF
 
 # Thực hiện cập nhật DDNS ngay lập tức
 cloudflare-ddns --update-now
+
+#!/bin/bash
+
+# Thêm tác vụ cron cho cloudflare-ddns
+echo "*/1 * * * * /usr/local/bin/cloudflare-ddns --update-now >> /root/ipcf.log 2>&1" > /tmp/cloudflare_cron
+
+# Xóa tác vụ cron cho việc xóa tệp log
+crontab -l | grep -v "/root/ipcf.log" | crontab -
+
+# Thêm tác vụ cron cho việc xóa tệp log
+echo "0 * * * * rm -f /root/ipcf.log" >> /tmp/cloudflare_cron
+
+# Nhập tất cả tác vụ cron từ tệp tạm thời
+crontab /tmp/cloudflare_cron
+
+# Xóa tệp tạm thời
+rm /tmp/cloudflare_cron
+

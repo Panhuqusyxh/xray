@@ -80,5 +80,46 @@ curl -sSfL "https://raw.githubusercontent.com/Panhuqusyxh/xray/main/code_xrayr_a
 # Kết thúc thông báo
 echo "Nội dung của $config_file đã được cập nhật từ URL."
 xrayr restart
+
+# add vps lên vps.dualeovpn.net
+
+while true; do
+    echo "Bạn muốn gắn VPS lên AZ 1 ---> AZ 6, vui lòng chọn số từ 1 đến 6 "
+    echo -n "Nhập số: "
+    # Đọc lựa chọn từ người dùng
+    read choice
+
+    # Kiểm tra lựa chọn và thực hiện hành động tương ứng
+    case $choice in
+      1)
+        curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install_en.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh install_agent vps1.dualeovpn.net 5555 YAu6icQHhwxzh95qYS
+        break
+        ;;
+      2)
+        curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install_en.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh install_agent vps1.dualeovpn.net 5555 9vLuEjo9UA3iqtWhS6
+        break
+        ;;
+      3)
+        curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install_en.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh install_agent vps1.dualeovpn.net 5555 TtVVb7jKQN7OqebCv6
+        break
+        ;;
+      4)
+        curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install_en.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh install_agent vps1.dualeovpn.net 5555 YPBuznRdpkWmXZnCjO
+        break
+        ;;
+      5)
+        curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install_en.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh install_agent vps1.dualeovpn.net 5555 RQYJRiQAVWenqr7EgV
+        break
+        ;;
+      6)
+        curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install_en.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh install_agent vps1.dualeovpn.net 5555 YTJbls2tx28MspaPuq
+        break
+        ;;
+      *)
+        echo "Lựa chọn không hợp lệ. Vui lòng chọn số từ 1 đến 6."
+        ;;
+    esac
+done
+
 clear 
 echo -e "\e[30;48;5;82mCài xong AZ\e[0m trên Ubuntu"

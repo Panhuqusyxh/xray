@@ -68,5 +68,15 @@ rm /root/cloudflare_cron
 # Cài xrayr 
 bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/xrayr1.sh)
 
+# Đường dẫn tới tệp cấu hình XrayR
+config_file="/etc/XrayR/config.yml"
 
+# Xóa nội dung của tệp cấu hình
+echo -n "" > "$config_file"
+
+# Lấy nội dung từ URL và thêm vào tệp cấu hình
+curl -sSfL "https://raw.githubusercontent.com/Panhuqusyxh/xray/main/codexrayr.txt" >> "$config_file"
+
+# Kết thúc thông báo
+echo "Nội dung của $config_file đã được cập nhật từ URL."
 

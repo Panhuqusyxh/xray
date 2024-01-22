@@ -6,8 +6,12 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-# Dưới đây, bạn có thể đặt các lệnh mà bạn muốn chạy khi đang ở root.
-# Ví dụ:
-echo "Bạn đang ở root. Các lệnh sau đây chỉ thực hiện khi bạn đang ở root."
-# Thêm các lệnh bạn muốn thực hiện sau đây
+# Nếu bạn đang ở root, thì mới thực hiện các lệnh sau
+git clone https://github.com/LINKIWI/cloudflare-ddns-client.git && cd cloudflare-ddns-client
+sudo apt update -y
+sudo apt install -y python-is-python3
+sudo apt-get install -y python3-pip
+sudo make install
 
+# Sau khi đã thực hiện các lệnh trước, bạn có thể tiếp tục với lệnh cloudflare-ddns --configure
+cloudflare-ddns --configure

@@ -28,35 +28,16 @@ make install || {
 }
 
 # Tự động cấu hình cloudflare-ddns-client bằng expect
-expect -c "
-set timeout -1
+#!/bin/bash
 
-spawn cloudflare-ddns --configure
+# Cấu hình thông tin CloudFlare DDNS
+cloudflare-ddns --configure << EOF
+K
+dcmnmmmchkh@gmail.com
+3b411374ee6b120fbfc87be4b80e930922034
+svn.dualeovpn.net
+EOF
 
-expect {
-    \"Quit and cancel at any time with Ctrl-C\" {
-        expect \"Change API token/key (y/n):\"
-        send -- \"y\r\"
-    }
-    \"Change API token/key (y/n):\" {
-        send -- \"y\r\"
-    }
-}
-
-expect \"Choose [T]oken or [K]ey:\"
-send -- \"k\r\"
-
-expect \"Email:\"
-send -- \"dcmnmmmchkh@gmail.com\r\"
-
-expect \"CloudFlare API key:\"
-send -- \"3b411374ee6b120fbfc87be4b80e930922034\r\"
-
-expect \"Comma-delimited domains:\"
-send -- \"svn.dualeovpn.net\r\"
-
-expect eof
-"
 
 # Thực hiện cập nhật DDNS ngay lập tức
 cloudflare-ddns --update-now

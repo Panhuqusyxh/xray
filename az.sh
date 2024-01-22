@@ -82,7 +82,7 @@ curl -sSfL "https://raw.githubusercontent.com/Panhuqusyxh/xray/main/code_xrayr_a
 # Kết thúc thông báo
 echo "Nội dung của $config_file đã được cập nhật từ URL."
 xrayr restart
-
+clear
 # add vps lên vps.dualeovpn.net
 
 while true; do

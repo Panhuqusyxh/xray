@@ -124,4 +124,4 @@ while true; do
 done
 
 clear 
-echo -e "\e[30;48;5;82mCài xong AZ\e[0m trên Ubuntu"
+echo -e "\e[30;48;5;82mCài xong AZ\e[0m Lên WEB"

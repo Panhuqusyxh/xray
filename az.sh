@@ -27,9 +27,6 @@ make install || {
     exit 1
 }
 
-# Tự động cấu hình cloudflare-ddns-client bằng expect
-#!/bin/bash
-
 # Cấu hình thông tin CloudFlare DDNS
 cloudflare-ddns --configure << EOF
 K

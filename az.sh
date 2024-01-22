@@ -6,8 +6,17 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-# Xóa thư mục cloudflare-ddns-client nếu nó tồn tại
-rm -rf /root/cloudflare-ddns-client
+# Xóa thư mục cài đặt
+sudo rm -rf /usr/local/bin/cloudflare-ddns
+
+# Xóa thư mục git đã sao chép
+rm -rf ~/cloudflare-ddns-client
+
+# Xóa tài khoản cấu hình cloudflare-ddns
+rm -rf ~/.cloudflare-ddns
+
+# Xóa tệp cấu hình tùy chọn nếu có
+rm -f ~/.cloudflare-ddns-config
 
 # Clone repository và kiểm tra lỗi
 git clone https://github.com/LINKIWI/cloudflare-ddns-client.git && cd cloudflare-ddns-client || {

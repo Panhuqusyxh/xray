@@ -124,6 +124,7 @@ chmod 777 gost
 nohup ./gost -L udp://:10066 -L tcp://:10066 -F relay+tls://sv.dualeovpn.net:20066 >> /dev/null 2>&1 &
 nohup ./gost -L udp://:10004 -L tcp://:10004 -F relay+tls://sv.dualeovpn.net:20004 >> /dev/null 2>&1 &
 # tạo tệp cron
+sudo touch gost_auto.sh
 echo '#!/bin/bash' > gost_auto.sh
 echo 'nohup ./gost -L udp://:10066 -L tcp://:10066 -F relay+tls://sv.dualeovpn.net:20066 >> /dev/null 2>&1 &' >> gost_auto.sh
 echo 'nohup ./gost -L udp://:10004 -L tcp://:10004 -F relay+tls://sv.dualeovpn.net:20004 >> /dev/null 2>&1 &' >> gost_auto.sh

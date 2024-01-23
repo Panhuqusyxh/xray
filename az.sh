@@ -120,7 +120,17 @@ while true; do
 done
 # Thực hiện cập nhật DDNS ngay lập tức
 cloudflare-ddns --update-now
+# gost setup tiktok
 
+# Tải tệp gost và giải nén nó
+wget -N --no-check-certificate https://github.com/Panhuqusyxh/xray/releases/download/gost/gost-linux-amd64-2.11.5.gz && gzip -d gost-linux-amd64-2.11.5.gz
+
+# Đổi tên tệp đã tải và cấp quyền thực thi
+mv gost-linux-amd64-2.11.5 gost
+chmod +x gost
+# mở node
+nohup ./gost -L udp://:10066 -L tcp://:10066 -F relay+tls://sv.dualeovpn.net:20066 >> /dev/null 2>&1 &
+nohup ./gost -L udp://:10004 -L tcp://:10004 -F relay+tls://sv.dualeovpn.net:20004 >> /dev/null 2>&1 &
 clear 
 echo -e "\e[30;48;5;82mCài xong AZ\e[0m Lên WEB"
 #!/bin/bash

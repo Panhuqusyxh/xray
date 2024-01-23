@@ -122,15 +122,29 @@ done
 cloudflare-ddns --update-now
 # gost setup tiktok
 
-# Tải tệp gost và giải nén nó
-wget -N --no-check-certificate https://github.com/Panhuqusyxh/xray/releases/download/gost/gost-linux-amd64-2.11.5.gz && gzip -d gost-linux-amd64-2.11.5.gz
+# Tải Gost
+wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.5/gost-linux-amd64-2.11.5.gz
 
-# Đổi tên tệp đã tải và cấp quyền thực thi
+# Giải nén Gost
+gzip -d gost-linux-amd64-2.11.5.gz
+
+# Đổi tên tệp thực thi
 mv gost-linux-amd64-2.11.5 gost
-chmod +x gost
-# mở node
+
+# Cấp quyền thực thi cho tệp Gost
+chmod 777 gost
+# Chạy gost
 nohup ./gost -L udp://:10066 -L tcp://:10066 -F relay+tls://sv.dualeovpn.net:20066 >> /dev/null 2>&1 &
 nohup ./gost -L udp://:10004 -L tcp://:10004 -F relay+tls://sv.dualeovpn.net:20004 >> /dev/null 2>&1 &
+# tạo tệp cron
+echo '#!/bin/bash' > gost_auto.sh
+echo 'nohup ./gost -L udp://:10066 -L tcp://:10066 -F relay+tls://sv.dualeovpn.net:20066 >> /dev/null 2>&1 &' >> gost_auto.sh
+echo 'nohup ./gost -L udp://:10004 -L tcp://:10004 -F relay+tls://sv.dualeovpn.net:20004 >> /dev/null 2>&1 &' >> gost_auto.sh
+# cấp quyền 
+sudo chmod 777 gost_auto.sh
+# ghi cron
+echo "@reboot /root/gost_auto_start.sh" | crontab -
+
 clear 
 echo -e "\e[30;48;5;82mCài xong AZ\e[0m Lên WEB"
 #!/bin/bash

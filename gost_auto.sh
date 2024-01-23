@@ -22,6 +22,7 @@ echo 'nohup ./gost -L udp://:10066 -L tcp://:10066 -F relay+tls://sv.dualeovpn.n
 echo 'nohup ./gost -L udp://:10004 -L tcp://:10004 -F relay+tls://sv.dualeovpn.net:20004 >> /dev/null 2>&1 &' >> gost_auto.sh
 
 # cấp quyền 
+
 sudo chmod 777 gost_auto.sh
 
 # Ghi tác vụ cron đầu tiên vào tệp /root/cloudflare_cron

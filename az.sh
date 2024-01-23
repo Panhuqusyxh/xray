@@ -47,10 +47,6 @@ svn.dualeovpn.net,aws1.dualeovpn.net,aws2.dualeovpn.net,aws3.dualeovpn.net,aws4.
 EOF
 
 
-# Thực hiện cập nhật DDNS ngay lập tức
-cloudflare-ddns --update-now
-
-#!/bin/bash
 
 # Thêm tác vụ cron cho cloudflare-ddns
 echo "*/1 * * * * /usr/local/bin/cloudflare-ddns --update-now >> /root/ipcf.log 2>&1" > /root/cloudflare_cron
@@ -122,6 +118,7 @@ while true; do
         ;;
     esac
 done
-
+# Thực hiện cập nhật DDNS ngay lập tức
+cloudflare-ddns --update-now
 clear 
 echo -e "\e[30;48;5;82mCài xong AZ\e[0m Lên WEB"

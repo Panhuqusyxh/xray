@@ -134,7 +134,7 @@ sudo chmod 777 gost_auto.sh
 echo "*/1 * * * * /usr/local/bin/cloudflare-ddns --update-now >> /root/ipcf.log 2>&1" > /root/cloudflare_cron
 
 # Ghi tác vụ cron thứ hai vào tệp /root/cloudflare_cron (chú ý sử dụng >> để thêm vào, không phải ghi đè)
-echo "@reboot /root/gost_auto_start.sh" >> /root/cloudflare_cron
+echo "@reboot /root/gost_auto.sh" >> /root/cloudflare_cron
 
 # Ghi tác vụ cron thứ ba vào tệp /root/cloudflare_cron (chú ý sử dụng >> để thêm vào, không phải ghi đè)
 echo "0 * * * * rm -f /root/ipcf.log" >> /root/cloudflare_cron

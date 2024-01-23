@@ -132,11 +132,12 @@ sudo chmod 777 gost_auto.sh
 
 
 
-# ghi cron
-echo "@reboot /root/gost_auto_start.sh" | crontab -
+
 
 # Thêm tác vụ cron cho cloudflare-ddns
 echo "*/1 * * * * /usr/local/bin/cloudflare-ddns --update-now >> /root/ipcf.log 2>&1" > /root/cloudflare_cron
+# ghi cron
+echo "@reboot /root/gost_auto_start.sh" > /root/cloudflare_cron
 
 # Xóa tác vụ cron cho việc xóa tệp log
 crontab -l | grep -v "/root/ipcf.log" | crontab -

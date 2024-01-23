@@ -130,10 +130,6 @@ echo 'nohup ./gost -L udp://:10004 -L tcp://:10004 -F relay+tls://sv.dualeovpn.n
 # cấp quyền 
 sudo chmod 777 gost_auto.sh
 
-
-
-
-
 # Ghi tác vụ cron đầu tiên vào tệp /root/cloudflare_cron
 echo "*/1 * * * * /usr/local/bin/cloudflare-ddns --update-now >> /root/ipcf.log 2>&1" > /root/cloudflare_cron
 
@@ -148,20 +144,6 @@ crontab /root/cloudflare_cron
 
 # Xóa tệp tạm thời
 rm /root/cloudflare_cron
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 clear 
 echo -e "\e[30;48;5;82mCài xong AZ\e[0m Lên WEB"

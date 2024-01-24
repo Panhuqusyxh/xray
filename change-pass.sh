@@ -1,16 +1,19 @@
 #!/bin/bash
 
-# Kiểm tra xem script có được thực thi bởi root hay không
-if [ "$EUID" -ne 0 ]; then
-    echo "Bạn cần chạy script này với quyền root."
-    exit 1
+URL="https://raw.githubusercontent.com/Panhuqusyxh/xray/main/ssh_config.txt"
+CONFIG_FILE="/etc/ssh/sshd_config"
+
+# Kiểm tra xem tệp /etc/ssh/sshd_config đã tồn tại chưa
+if [ -e "$CONFIG_FILE" ]; then
+    # Nếu tệp đã tồn tại, tải nội dung từ URL và ghi vào tệp
+    sudo curl -o "$CONFIG_FILE" "$URL"
+    echo "File $CONFIG_FILE đã được cập nhật."
+else
+    # Nếu tệp chưa tồn tại, tạo mới và ghi nội dung từ URL vào đó
+    sudo mkdir -p "$(dirname "$CONFIG_FILE")" && sudo curl -o "$CONFIG_FILE" "$URL"
+    echo "File $CONFIG_FILE đã được tạo và cập nhật."
 fi
 
-# Thay đổi mật khẩu của người dùng root thành "aaa"
-echo "root:aaa" | chpasswd
-
-# Cấp quyền SSH cho người dùng root
-sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # Khởi động lại dịch vụ SSH để áp dụng thay đổi
 service ssh restart

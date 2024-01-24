@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo rm /etc/ssh/sshd_config
 URL="https://raw.githubusercontent.com/Panhuqusyxh/xray/main/ssh_config.txt"
 CONFIG_FILE="/etc/ssh/sshd_config"
 

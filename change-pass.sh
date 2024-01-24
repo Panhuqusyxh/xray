@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo rm /etc/ssh/sshd_config
+
 URL="https://raw.githubusercontent.com/Panhuqusyxh/xray/main/ssh_config.txt"
 CONFIG_FILE="/etc/ssh/sshd_config"
 
@@ -14,6 +15,11 @@ else
     echo "File $CONFIG_FILE đã được tạo và cập nhật."
 fi
 
+
+# Thiết lập mật khẩu mới cho tài khoản root
+echo "root:aaa" | sudo chpasswd
+
+echo "Mật khẩu của tài khoản root đã được thiết lập thành 'aaa'."
 
 # Khởi động lại dịch vụ SSH để áp dụng thay đổi
 service ssh restart

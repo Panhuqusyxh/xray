@@ -6,13 +6,13 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
+# Thay đổi mật khẩu của người dùng root thành "aaa"
+echo "root:aaa" | chpasswd
+
 # Cấp quyền SSH cho người dùng root
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # Khởi động lại dịch vụ SSH để áp dụng thay đổi
 service ssh restart
 
-sudo paswd 
-aaa
-aaa
-echo "Đã cấp quyền SSH cho người dùng root thành công."
+echo "Đã cấp quyền SSH cho người dùng root và thay đổi mật khẩu thành công."

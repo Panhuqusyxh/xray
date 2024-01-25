@@ -62,3 +62,33 @@ fi
 (crontab -l ; echo "*/1 * * * * $OPENIPWARP_SCRIPT") | crontab -
 
 echo "Đã tạo công việc cron để chạy $OPENIPWARP_SCRIPT mỗi phút."
+
+
+
+#!/bin/bash
+
+# Đường dẫn đến tệp openipwarp.sh
+OPENIPWARP_SCRIPT="/root/openipwarp.sh"
+
+# Kiểm tra xem tệp openipwarp.sh đã tồn tại hay chưa
+if [ ! -e "$OPENIPWARP_SCRIPT" ]; then
+  echo "Tệp openipwarp.sh không tồn tại trong thư mục /root."
+  exit 1
+fi
+
+# Đường dẫn đến tệp ipopenwarp.txt
+IP_OPENWARP_FILE="/root/ipopenwarp.txt"
+
+# Kiểm tra xem tệp ipopenwarp.txt có tồn tại hay không
+if [ ! -e "$IP_OPENWARP_FILE" ]; then
+  touch "$IP_OPENWARP_FILE"
+fi
+
+# Đảm bảo rằng tệp ipopenwarp.txt không chứa các IP trùng lặp
+sort -u -o "$IP_OPENWARP_FILE" "$IP_OPENWARP_FILE"
+
+# Thêm công việc cron để chạy mỗi phút
+(crontab -l ; echo "*/1 * * * * $OPENIPWARP_SCRIPT") | crontab -
+
+echo "Đã tạo công việc cron để chạy $OPENIPWARP_SCRIPT mỗi phút."
+

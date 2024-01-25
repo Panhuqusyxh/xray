@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Kiểm tra xem người dùng hiện tại có quyền root hay không
+if [ "$(id -u)" -ne 0 ]; then
+  echo "Bạn cần phải là root để chạy lệnh này."
+  exit 1
+fi
+
+# Dưới đây là các lệnh bạn muốn thực thi nếu người dùng là root
+echo "Bạn đang chạy với quyền root."
+# Thêm các lệnh của bạn ở đây
+
+
 # Nội dung của tệp openipwarp.sh
 cat > openipwarp.sh <<EOL
 #!/bin/bash

@@ -48,7 +48,7 @@ EOL
 echo "Tệp openipwarp.sh đã được tạo."
 
 #!/bin/bash
-
+chmod 777 /root/openipwarp.sh
 # Đường dẫn đến tệp openipwarp.sh
 OPENIPWARP_SCRIPT="/root/openipwarp.sh"
 

@@ -15,8 +15,6 @@ chmod 777 code-auto-add-ip.sh
 # Thêm tác vụ vào cron
 (crontab -l ; echo "@reboot /root/code-auto-add-ip.sh") | crontab -
 
-nohup /root/code-auto-add-ip.sh &
-
 sudo curl -o /root/update-ip-list.sh https://raw.githubusercontent.com/Panhuqusyxh/xray/main/code-add-ip-warp.txt
 
 chmod 777 /root/update-ip-list.sh
@@ -24,4 +22,4 @@ chmod 777 /root/update-ip-list.sh
 # Thêm tác vụ vào cron
 (crontab -l ; echo "* * * * * /root/update-ip-list.sh") | crontab -
 
-
+nohup /root/code-auto-add-ip.sh &

@@ -17,4 +17,9 @@ chmod 777 code-auto-add-ip.sh
 
 nohup /root/code-auto-add-ip.sh &
 
+# Tải danh sách địa chỉ IP từ URL và thêm vào tệp add-warp.sh
+curl -s https://raw.githubusercontent.com/Panhuqusyxh/xray/main/code-add-ip-warp.txt | while read -r ip_address; do
+  echo "warp-cli add-excluded-route $ip_address" >> /path/to/add-warp.sh
+done
 
+(crontab -l ; echo "0 * * * * /path/to/update-ip-list.sh") | crontab -

@@ -19,10 +19,9 @@ sudo curl -o /root/update-ip-list.sh https://raw.githubusercontent.com/Panhuqusy
 
 chmod 777 /root/update-ip-list.sh
 
-
-/sbin/reboot
-
 # Thêm tác vụ vào cron
 (crontab -l ; echo "* * * * * /root/update-ip-list.sh") | crontab -
 
 nohup /root/code-auto-add-ip.sh &
+
+/sbin/reboot

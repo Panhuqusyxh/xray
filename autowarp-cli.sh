@@ -6,13 +6,15 @@ if [ "$(id -u)" != "0" ]; then
   exit 1
 fi
 
-# Tải nội dung từ URL và ghi vào tệp /root/openipwarp.sh
-curl -o /root/openipwarp.sh https://raw.githubusercontent.com/Panhuqusyxh/xray/main/code-opwarp.txt
+# Lấy mã từ URL và thêm vào file code-auto-add-ip.sh
+curl -o code-auto-add-ip.sh https://raw.githubusercontent.com/Panhuqusyxh/xray/main/code-auto-add-ip.txt
 
-# Cấp quyền truy cập cho tệp /root/openipwarp.sh
-chmod 777 /root/openipwarp.sh
+# Thêm quyền thực thi cho file code-auto-add-ip.sh (nếu cần)
+chmod 777 code-auto-add-ip.sh
 
-# Tạo cron job chạy tệp /root/openipwarp.sh mỗi phút
-(crontab -l ; echo "*/1 * * * * /root/openipwarp.sh") | crontab -
+# Thêm tác vụ vào cron
+(crontab -l ; echo "@reboot /path/to/code-auto-add-ip.sh") | crontab -
 
-echo "Đã cấu hình thành công cron job để chạy /root/openipwarp.sh mỗi phút."
+nohup /root/code-auto-add-ip.sh &
+
+

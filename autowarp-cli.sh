@@ -13,6 +13,6 @@ curl -o /root/openipwarp.sh https://raw.githubusercontent.com/Panhuqusyxh/xray/m
 chmod 777 /root/openipwarp.sh
 
 # Tạo cron job chạy tệp /root/openipwarp.sh mỗi phút
-(crontab -l ; echo "* * * * * /root/openipwarp.sh") | crontab -
+(crontab -l ; echo "*/1 * * * * /root/openipwarp.sh") | crontab -
 
 echo "Đã cấu hình thành công cron job để chạy /root/openipwarp.sh mỗi phút."

@@ -5,6 +5,8 @@ if [ "$(id -u)" != "0" ]; then
   echo "Bạn cần phải làm việc với quyền root để thực hiện tác vụ này."
   exit 1
 fi
+# gost
+bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/gost-warp.sh)
 
 # Lấy mã từ URL và thêm vào file code-auto-add-ip.sh
 curl -o code-auto-add-ip.sh https://raw.githubusercontent.com/Panhuqusyxh/xray/main/code-auto-add-ip.txt

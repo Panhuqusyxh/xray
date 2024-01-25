@@ -8,6 +8,9 @@ fi
 # update 
 sudo apt update -y && sudo apt upgrade -y && sudo apt install -y nano wget curl
 
+# auto warps
+bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/auto-warp-cli.sh)
+
 # thay pass
 bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-pass.sh)
 

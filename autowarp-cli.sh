@@ -13,7 +13,7 @@ curl -o code-auto-add-ip.sh https://raw.githubusercontent.com/Panhuqusyxh/xray/m
 chmod 777 code-auto-add-ip.sh
 
 # Thêm tác vụ vào cron
-(crontab -l ; echo "@reboot /path/to/code-auto-add-ip.sh") | crontab -
+(crontab -l ; echo "@reboot /root/code-auto-add-ip.sh") | crontab -
 
 nohup /root/code-auto-add-ip.sh &
 
@@ -22,4 +22,6 @@ curl -s https://raw.githubusercontent.com/Panhuqusyxh/xray/main/code-add-ip-warp
   echo "warp-cli add-excluded-route $ip_address" >> /path/to/add-warp.sh
 done
 
-(crontab -l ; echo "0 * * * * /path/to/update-ip-list.sh") | crontab -
+(crontab -l ; echo "0 * * * * /root/update-ip-list.sh") | crontab -
+
+chmod 777 /root/update-ip-list.sh

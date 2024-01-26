@@ -5,6 +5,8 @@ if [ "$EUID" -ne 0 ]; then
     echo "Bạn không đang ở root, hãy đăng nhập vào tài khoản root để thực hiện lệnh này."
     exit 1
 fi
+
+bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/gost-warp.sh)
 # update 
 sudo apt update -y && sudo apt upgrade -y && sudo apt install -y nano wget curl
 

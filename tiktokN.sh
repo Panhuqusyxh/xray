@@ -72,8 +72,8 @@ echo "Nội dung của $config_file đã được cập nhật từ URL."
 xrayr restart
 clear
 # add vps lên vps.dualeovpn.net
-curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install_en.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh install_agent vps1.dualeovpn.net 5555 ySjf5ltSQcTtm4vUWb
 
+bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/add-Nezha.sh)
   
 # Thực hiện cập nhật DDNS ngay lập tức
 cloudflare-ddns --update-now

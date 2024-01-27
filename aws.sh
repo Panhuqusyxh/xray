@@ -1,6 +1,5 @@
-#!/bin/bash
 
-echo -n "Chọn mã server (A, B, C, D, E):  "
+echo "Chọn mã server (A, B, C, D, E):  "
 read option
 
 case $option in

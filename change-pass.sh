@@ -17,7 +17,7 @@ fi
 
 
 # Thiết lập mật khẩu mới cho tài khoản root
-echo "root:aaa" | sudo chpasswd
+echo "root:Hoilamgi@12345" | sudo chpasswd
 
 echo "Mật khẩu của tài khoản root đã được thiết lập thành 'aaa'."
 

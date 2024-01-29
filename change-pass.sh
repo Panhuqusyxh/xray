@@ -19,7 +19,7 @@ fi
 # Thiết lập mật khẩu mới cho tài khoản root
 echo "root:Hoilamgi@12345" | sudo chpasswd
 
-echo "Mật khẩu của tài khoản root đã được thiết lập thành 'aaa'."
+echo "Mật khẩu của tài khoản root đã được thiết lập thành 'Hoilamgi@12345'."
 
 # Khởi động lại dịch vụ SSH để áp dụng thay đổi
 service ssh restart

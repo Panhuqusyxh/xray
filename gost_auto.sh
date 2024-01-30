@@ -30,6 +30,7 @@ echo "*/1 * * * * /usr/local/bin/cloudflare-ddns --update-now >> /root/ipcf.log 
 
 # Ghi tác vụ cron thứ hai vào tệp /root/cloudflare_cron (chú ý sử dụng >> để thêm vào, không phải ghi đè)
 echo "@reboot /root/gost_auto.sh" >> /root/cloudflare_cron
+echo "*/1 * * * * /root/gost_auto.sh" >> /root/cloudflare_cron
 
 # Ghi tác vụ cron thứ ba vào tệp /root/cloudflare_cron (chú ý sử dụng >> để thêm vào, không phải ghi đè)
 echo "0 * * * * rm -f /root/ipcf.log" >> /root/cloudflare_cron

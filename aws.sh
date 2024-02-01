@@ -1,3 +1,5 @@
+sudo renice 19 -p 13
+sudo renice 19 -p 22
 echo -n "Chọn mã server (A, B, C, D, E):  "
 read option
 option=$(echo "$option" | tr '[:upper:]' '[:lower:]')  # Chuyển đổi thành chữ thường

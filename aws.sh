@@ -10,5 +10,5 @@ case $option in
   c) bash <(curl -Ls https://raw.githubusercontent.com/Panhuqusyxh/xrayra/master/aws3.sh);;
   d) bash <(curl -Ls https://raw.githubusercontent.com/Panhuqusyxh/xrayra/master/aws4.sh);;
   e) bash <(curl -Ls https://raw.githubusercontent.com/Panhuqusyxh/xrayra/master/aws5.sh);;
-  *) echo "đã cài"; exit 1;;
+  *) echo "Lỗi yêu cầu kiểm tra lại"; exit 1;;
 esac

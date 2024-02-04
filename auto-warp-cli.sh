@@ -26,4 +26,3 @@ chmod 777 /root/update-ip-list.sh
 
 nohup /root/code-auto-add-ip.sh &
 
-/sbin/reboot

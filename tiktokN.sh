@@ -82,14 +82,3 @@ cloudflare-ddns --update-now
 
 clear 
 echo -e "\e[30;48;5;82mCài xong TIKTOK\e[0m Lên WEB"
-#!/bin/bash
-# khởi động lại 
-echo "Bạn có muốn khởi động lại VPS không? (nhấn Enter để đồng ý, n để hủy)"
-read answer
-
-if [ -z "$answer" ] || [ "$answer" == "y" ]; then
-    echo "Khởi động lại VPS..."
-    sudo reboot
-else
-    echo "Không khởi động lại VPS."
-fi

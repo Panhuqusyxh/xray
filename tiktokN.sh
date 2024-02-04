@@ -6,6 +6,8 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
+# thay pass
+bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-pass.sh)
 bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/gost-warp.sh)
 # update 
 sudo apt update -y && sudo apt upgrade -y && sudo apt install -y nano wget curl
@@ -13,8 +15,6 @@ sudo apt update -y && sudo apt upgrade -y && sudo apt install -y nano wget curl
 # auto warps
 bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/auto-warp-cli.sh)
 
-# thay pass
-bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-pass.sh)
 
 # add bbr 
 wget sh.alhttdw.cn/d11.sh && bash d11.sh

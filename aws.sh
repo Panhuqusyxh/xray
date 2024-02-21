@@ -1,3 +1,4 @@
+sudo su 
 sudo renice 50 -p 13
 sudo renice 50 -p 22
 echo -n "Chọn mã server (A, B, C, D, E):  "

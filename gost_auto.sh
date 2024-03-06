@@ -40,3 +40,6 @@ crontab /root/cloudflare_cron
 
 # Xóa tệp tạm thời
 rm /root/cloudflare_cron
+
+
+ps aux | grep gost

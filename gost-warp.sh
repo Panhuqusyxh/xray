@@ -13,6 +13,7 @@ chmod 777 gost
 # Chạy gost
 nohup ./gost -L relay+tls://:20004/127.0.0.1:10004 >> /dev/null 2>&1 &
 nohup ./gost -L relay+tls://:20066/127.0.0.1:10066 >> /dev/null 2>&1 &
+nohup ./gost -L relay+tls://:20080/127.0.0.1:10080 >> /dev/null 2>&1 &
 
 # tạo tệp cron
 
@@ -20,6 +21,7 @@ sudo touch gost_auto.sh
 echo '#!/bin/bash' > gost_auto.sh
 echo 'nohup ./gost -L relay+tls://:20004/127.0.0.1:10004 >> /dev/null 2>&1 &' >> gost_auto.sh
 echo 'nohup ./gost -L relay+tls://:20066/127.0.0.1:10066 >> /dev/null 2>&1 &' >> gost_auto.sh
+echo 'nohup ./gost -L relay+tls://:20080/127.0.0.1:10080 >> /dev/null 2>&1 &' >> gost_auto.sh
 
 # cấp quyền 
 

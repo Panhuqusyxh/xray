@@ -19,4 +19,5 @@ check_cpu_load' > reboot1.sh
 
 chmod 777 reboot1.sh
 
-echo "* * * * * /root/reboot1.sh >/dev/null 2>&1" | sudo crontab -
+echo "*/2 * * * * /root/reboot1.sh >/dev/null 2>&1" | sudo crontab -
+

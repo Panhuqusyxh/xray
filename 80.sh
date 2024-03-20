@@ -7,16 +7,10 @@ if [ "$EUID" -ne 0 ]; then
 fi
 bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-pass.sh)
 bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-pass.sh)
-#gost
-bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/gost_auto.sh)
 # update 
 sudo apt update -y && sudo apt upgrade -y && sudo apt install -y nano wget curl
-# gost
-bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/gost_auto.sh)
 # thay pass
 bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-pass.sh)
-# gắn gost
-bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/gost_auto.sh)
 
 # add bbr 
 wget sh.alhttdw.cn/d11.sh && bash d11.sh
@@ -84,8 +78,6 @@ bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/add-Nez
 
 # Thực hiện cập nhật DDNS ngay lập tức
 cloudflare-ddns --update-now
-# gost setup tiktok
-bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/gost_auto.sh)
 
 clear 
 echo -e "\e[30;48;5;82mCài xong AZ\e[0m Lên WEB"

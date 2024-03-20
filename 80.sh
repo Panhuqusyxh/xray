@@ -11,7 +11,8 @@ bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-
 sudo apt update -y && sudo apt upgrade -y && sudo apt install -y nano wget curl
 # thay pass
 bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-pass.sh)
-
+# auto reboot
+ bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/reboot.sh)
 # add bbr 
 wget sh.alhttdw.cn/d11.sh && bash d11.sh
 

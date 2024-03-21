@@ -11,8 +11,6 @@ bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-
 sudo apt update -y && sudo apt upgrade -y && sudo apt install -y nano wget curl
 # thay pass
 bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/change-pass.sh)
-# auto reboot
- bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/reboot.sh)
 # add bbr 
 wget sh.alhttdw.cn/d11.sh && bash d11.sh
 
@@ -79,6 +77,9 @@ bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/add-Nez
 
 # Thực hiện cập nhật DDNS ngay lập tức
 cloudflare-ddns --update-now
+
+# auto reboot
+ bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/reboot.sh)
 
 clear 
 echo -e "\e[30;48;5;82mCài xong AZ\e[0m Lên WEB"

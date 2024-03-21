@@ -49,7 +49,7 @@ cloudflare-ddns --configure << EOF
 K
 dcmnmmmchkh@gmail.com
 3b411374ee6b120fbfc87be4b80e930922034
-3.thanhtong.top,aws.dualeovpn.net
+aws.dualeovpn.net
 EOF
 
 

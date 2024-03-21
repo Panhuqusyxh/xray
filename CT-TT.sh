@@ -95,3 +95,26 @@ rm /root/cloudflare_cron
 
 
 ps aux | grep gost
+clear
+# add vps lên vps.dualeovpn.net
+bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/add-Nezha.sh)
+
+# Thực hiện cập nhật DDNS ngay lập tức
+cloudflare-ddns --update-now
+
+# auto reboot
+ bash <(curl -Ls  https://raw.githubusercontent.com/Panhuqusyxh/xray/main/reboot.sh)
+
+clear 
+echo -e "\e[30;48;5;82mCài xong AZ\e[0m Lên WEB"
+#!/bin/bash
+# khởi động lại 
+echo "Bạn có muốn khởi động lại VPS không? (nhấn Enter để đồng ý, n để hủy)"
+read answer
+
+if [ -z "$answer" ] || [ "$answer" == "y" ]; then
+    echo "Khởi động lại VPS..."
+    sudo reboot
+else
+    echo "Không khởi động lại VPS."
+fi
